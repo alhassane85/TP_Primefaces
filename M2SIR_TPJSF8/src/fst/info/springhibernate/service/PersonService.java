@@ -16,6 +16,8 @@ public interface PersonService {
 	public void onRowEdit(RowEditEvent event);
 
 	public void onRowCancel(RowEditEvent event);
+	
+	public void test();
 
 	public void onCellEdit(CellEditEvent event);
 

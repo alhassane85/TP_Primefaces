@@ -58,5 +58,11 @@ public class PersonServiceImpl implements PersonService,Serializable{
             FacesContext.getCurrentInstance().addMessage(null, msg);
         }
     }
+
+	@Override
+	public void test() {
+		// TODO Auto-generated method stub
+		
+	}
  
 }
