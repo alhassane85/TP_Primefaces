@@ -59,10 +59,6 @@ public class PersonServiceImpl implements PersonService,Serializable{
         }
     }
 
-	@Override
-	public void test() {
-		// TODO Auto-generated method stub
-		
-	}
+	
  
 }
