@@ -2,13 +2,17 @@ package fst.info.springhibernate.model;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.primefaces.event.RowEditEvent;
  
 /**
  * Entity bean with JPA annotations
@@ -19,7 +23,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="PERSON")
 @ManagedBean(name="person")
-public class Person {
+public class Person implements Serializable{
 	/**
 	 * 
 	 */
@@ -62,4 +66,5 @@ public class Person {
     public String toString(){
         return "id="+id+", name="+name+", country="+country;
     }
+    
 }
