@@ -10,7 +10,6 @@ import fst.info.springhibernate.model.Person;
 public interface PersonService {
 
 	public void addPerson(Person p);
-
 	public List<Person> getlistPersons();
 
 	public void onRowEdit(RowEditEvent event);
@@ -20,5 +19,6 @@ public interface PersonService {
 	
 
 	public void onCellEdit(CellEditEvent event);
+	void modifyPerson(Person p);
 
 }

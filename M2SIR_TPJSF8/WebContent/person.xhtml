@@ -82,11 +82,11 @@
 
 	<h:form id="form">
 		<p:growl id="msgs" showDetail="true" />
-		<p:dataTable var="car" value="#{personService.listPersons}"
+		<p:dataTable var="car" value="#{personService.listPersons}" style="background-colr:blue;"
 			paginator="true" rows="10"
 			paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink}
                   {CurrentPageReport} {NextPageLink} {LastPageLink}"
-			rowsPerPageTemplate="5,10,15" editable="true">
+			rowsPerPageTemplate="5,10,15" editable="true" id="form" >
 			<f:facet name="header">
             Liste des personnes
         </f:facet>
@@ -97,18 +97,27 @@
 				update=":form:msgs" />
 			<p:ajax event="rowEditCancel" listener="#{personService.onRowCancel}"
 				update=":form:msgs" />
-			<p:column headerText="Id" sortBy="#{car.id}" filterBy="#{car.id}">
-				<h:outputText value="#{car.id}" />
-			</p:column>
-			<p:column headerText="Name" sortBy="#{car.name}"
-				filterBy="#{car.name}">
-				<h:outputText value="#{car.name}" />
-			</p:column>
-			<p:column headerText="Country" sortBy="#{car.country}"
-				filterBy="#{car.country}">
-				<h:outputText value="#{car.country}" />
-			</p:column>
-			<p:column style="width:32px">
+		 <p:column headerText="Id" sortBy="#{car.id}" filterBy="#{car.id}">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{car.id}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{car.id}" style="width:100%" label="Id"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+       
+        <p:column headerText="Name" sortBy="#{car.name}" filterBy="#{car.name}">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{car.name}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{car.name}" style="width:100%" label="Name"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+        <p:column headerText="Country" sortBy="#{car.country}" filterBy="#{car.country}">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{car.country}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{car.country}" style="width:100%" label="Country"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+			
+			<p:column >
 				<p:rowEditor />
 			</p:column>
 		</p:dataTable>
