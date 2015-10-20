@@ -20,5 +20,7 @@ public interface PersonService {
 
 	public void onCellEdit(CellEditEvent event);
 	void modifyPerson(Person p);
+	void delete(Person p);
+	public List<Integer>count();
 
 }

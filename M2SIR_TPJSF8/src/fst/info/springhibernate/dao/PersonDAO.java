@@ -8,7 +8,8 @@ public interface PersonDAO {
  
     public void addPerson(Person p);
     public void updatePerson(Person p);
-    
+    public void delete(Person p);
 
+    public List <Integer> count();
     public List<Person> listPersons();
 }
